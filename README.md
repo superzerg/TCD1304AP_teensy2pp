@@ -14,8 +14,11 @@ It should work (with probably a bit of configuration) with an arduino Mega2560, 
 Teensy2++                   TCD1304AP             Other
 
 OC2A/PB4 pin   ---------->  PhiM
+
 OC3A/PC6 pin   ---------->  ICG
+
 OC1A/PB5 pin   ---------->  SH
+
 ADC0/PF0 pin   <----------  OS
 
 PC0 pin        --------------------------------->  LED (in series with an apropriate resistor)
