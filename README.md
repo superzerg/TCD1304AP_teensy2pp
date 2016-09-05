@@ -5,6 +5,7 @@ It should work (with probably a bit of configuration) with an arduino Mega2560, 
 
 example of a reading illuminated by a LED:
 ![reading_no_bit](reading_no_bit.png)
+
 example of a reading illuminated by a LED with the shadow of a 3.5mm bit:
 ![reading_3.5mm_bit](reading_3.5mm_bit.png)
 
