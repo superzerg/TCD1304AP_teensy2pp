@@ -23,7 +23,7 @@ OC1A/PB5 pin ---> SH
 
 ADC0/PF0 pin <--- OS
 
-PC0 pin ------------------------> LED (in series with an apropriate resistor)
+PC0 pin ----------------------------------> LED (in series with an apropriate resistor)
 
 3) Description/ Usage
 ==============
