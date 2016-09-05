@@ -13,7 +13,7 @@ It should work (with probably a bit of configuration) with an arduino Mega2560, 
 2) Wiring
 ==============
 
-__Teensy2++_________TCD1304A_____Other
+Teensy2++_________TCD1304A_____Other
 
 OC2A/PB4 pin   --->  PhiM
 
