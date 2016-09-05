@@ -13,7 +13,7 @@ It should work (with probably a bit of configuration) with an arduino Mega2560, 
 2) Wiring
 ==============
 
-Teensy2++                  TCD1304AP               Other
+Teensy2+		  TCD1304A			Other
 
 OC2A/PB4 pin   ---------->  PhiM
 
@@ -26,6 +26,7 @@ ADC0/PF0 pin   <----------  OS
 PC0 pin        --------------------------------->  LED (in series with an apropriate resistor)
 
 3) Description/ Usage
+==============
 
 This program has been written to use the TCD1304AP as a filament width sensor (a bit like http://www.thingiverse.com/thing:454584). However as the TCD1304AP sensor is cheap and no additional componant are needed to interface it, it makes the TCD1304AP solution very competitive.
 
@@ -54,6 +55,7 @@ As you can see in the previous paragraph, the teensy board is really pushed to i
 - durring acquisition, almost 100% of the CPU cycles are spent in the interupt routine reading the pixels values.
 
 4) TODO
+==============
 
 I plan to make:
 - a function to find automatically the best duration for the LED to be switch on (best contrast but no saturation).
