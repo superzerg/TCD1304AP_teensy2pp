@@ -1,6 +1,6 @@
 # TCD1304AP_teensy2pp
 
-Control and read out directly the TCD1304AP CCD linear array (http://oceanoptics.com/wp-content/uploads/Toshiba-TCD1304AP-CCD-array.pdf) with a teensy2pp.
+Control and read out directly the TCD1304AP CCD linear array (http://oceanoptics.com/wp-content/uploads/Toshiba-TCD1304AP-CCD-array.pdf) with a teensy2++ (https://www.pjrc.com/store/teensypp.html).
 It should work (with probably a bit of configuration) with an arduino Mega2560, but other arduino boards have too little RAM to read all pixels (the TCD1304AP has 3648 pixels, so to read all pixels at least 4k of memory is needed).
 
 1) Installation
@@ -13,17 +13,17 @@ It should work (with probably a bit of configuration) with an arduino Mega2560, 
 2) Wiring
 ==============
 
-Teensy2+		  TCD1304A			Other
+__Teensy2++_________TCD1304A_____Other
 
-OC2A/PB4 pin   ---------->  PhiM
+OC2A/PB4 pin   --->  PhiM
 
-OC3A/PC6 pin   ---------->  ICG
+OC3A/PC6 pin   --->  ICG
 
-OC1A/PB5 pin   ---------->  SH
+OC1A/PB5 pin   --->  SH
 
-ADC0/PF0 pin   <----------  OS
+ADC0/PF0 pin   <---  OS
 
-PC0 pin        --------------------------------->  LED (in series with an apropriate resistor)
+PC0 pin        -------------->  LED (in series with an apropriate resistor)
 
 3) Description/ Usage
 ==============
@@ -34,6 +34,25 @@ The TCD1304AP sensor is driven without using the electric shutther function, so 
 
 Once the sketch is runing on your teensy2++ and the wiring is done, just plug the USB cable to your computer and run "python read_pixel.py" to see live the readings of the TCD304AP.
 As the TCD1304AP is very sensitive, it must be put with the LED in a totally opaque enclosure, otherwise you will only read saturated pixels.
+
+As you can see in chapter 4, the teensy board is really pushed to its limits:
+- timer0 is used to control the time the LED is on (typicaly few ms).
+- timer1 is used for SH generation (SH freq = 4x the pixel rate).
+- timer2 is used to trigger ADC and to generate the interupts to read the pixels values.
+- ADC can be run between 615 kSample/s (prescaler=2) and 77kSample/s (prescaler=16) whereas the datasheet recomands 15kSample/s (prescaler=64) to get the maximum resolution.
+- durring acquisition, almost 100% of the CPU cycles are spent in the interupt routine reading the pixels values.
+
+4) Configuration
+==============
+
+Most of the teensy2++ pins used to control the TCD1304AP can easily be changed in tcd1304ap.h (not tested yet, please repport if it works):
+- to change the pin connected to ICG, change the value of ICG, ICG_HIGH() and ICG_LOW()
+- to change the pin connected to SH, change the value of SH
+- to change the pin connected to OS, change the value of OS (it must be an ADC pin)
+- to change the pin connected to the LED, change the value of LED.
+- the pin connected to PhiM cannot be easilly changed (it as to be a pin controlled by a timer and the code has to be change in several places)
+
+You can reffer to the following image to know what value correspond to what pin. ![teensy2++ pinout in C](https://www.pjrc.com/teensy/pinout4b.png) 
 
 There are few parameters you may want to set in the TCD1304ap.ino file (the values there works great for me):
 - The pixel rate (in MHz), as 1st argument of the tcd1304ap::init() function in setup()
@@ -47,14 +66,7 @@ Before you change these values, you should know:
 - The maximum pixel rate I could get without having my pixel readings unpredictably shifted was 0.133MHz. Above that, the readings are basicly useless as you cannot be sure anymore of which pixels gave you the reading.
 - Decreasing the ADC prescaler makes the ADC run faster, so yu can go up a bit in pixel rate, but the resolution of the ADC decreases as well.
 
-As you can see in the previous paragraph, the teensy board is really pushed to its limits:
-- timer0 is used to control the time the LED is on (typicaly few ms).
-- timer1 is used for SH generation (SH freq = 4x the pixel rate).
-- timer2 is used to trigger ADC and to generate the interupts to read the pixels values.
-- ADC can be run between 615 kSample/s (prescaler=2) and 77kSample/s (prescaler=16) whereas the datasheet recomands 15kSample/s (prescaler=64) to get the maximum resolution.
-- durring acquisition, almost 100% of the CPU cycles are spent in the interupt routine reading the pixels values.
-
-4) TODO
+5) TODO
 ==============
 
 I plan to make:
