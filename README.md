@@ -18,7 +18,7 @@ example of a reading illuminated by a LED with the shadow of a 3.5mm bit:
 2) Wiring
 ==============
 
-| Teensy2++  |  | TCD1304A |  | Other
+| Teensy2++&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;TCD1304A&nbsp;&nbsp;|&nbsp;&nbsp;|&nbsp;&nbsp;Other
 
 OC2A/PB4 pin ---> PhiM
 
