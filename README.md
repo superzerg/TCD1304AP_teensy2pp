@@ -3,6 +3,11 @@
 Control and read out directly the TCD1304AP CCD linear array (http://oceanoptics.com/wp-content/uploads/Toshiba-TCD1304AP-CCD-array.pdf) with a teensy2++ (https://www.pjrc.com/store/teensypp.html).
 It should work (with probably a bit of configuration) with an arduino Mega2560, but other arduino boards have too little RAM to read all pixels (the TCD1304AP has 3648 pixels, so to read all pixels at least 4k of memory is needed).
 
+example of a reading illuminated by a LED:
+![reading_no_bit](reading_no_bit.png)
+example of a reading illuminated by a LED with the shadow of a 3.5mm bit:
+![reading_3.5mm_bit](reading_3.5mm_bit.png)
+
 1) Installation
 ==============
 
@@ -13,7 +18,7 @@ It should work (with probably a bit of configuration) with an arduino Mega2560, 
 2) Wiring
 ==============
 
-Teensy2++______TCD1304A_____Other
+Teensy2++        TCD1304A        Other
 
 OC2A/PB4 pin ---> PhiM
 
@@ -52,7 +57,8 @@ Most of the teensy2++ pins used to control the TCD1304AP can easily be changed i
 - to change the pin connected to the LED, change the value of LED.
 - the pin connected to PhiM cannot be easilly changed (it as to be a pin controlled by a timer and the code has to be change in several places)
 
-You can reffer to the following image to know what value correspond to what pin. ![teensy2++ pinout in C](https://www.pjrc.com/teensy/pinout4b.png) 
+You can reffer to the following image to know what value correspond to what pin. 
+![teensy2++ pinout in C](https://www.pjrc.com/teensy/pinout4b.png) 
 
 There are few parameters you may want to set in the TCD1304ap.ino file (the values there works great for me):
 - The pixel rate (in MHz), as 1st argument of the tcd1304ap::init() function in setup()

@@ -16,7 +16,7 @@ max data frequency with no errors:
 - 0.083 MHz with ADC prescaler=2 (160 instructions avalable for ISR, 21.1 Hz measurement rate)
 - 0.074 MHz with ADC prescaler=4 (158 instructions avalable for ISR, 18.8 Hz measurement rate)
 - no seetings with ADC prescaler>=8
-- 0.071 MHz with ADC prescaler=16 (10 instruction acailable for ISR) ???
+- 0.071 MHz with ADC prescaler=16 (10 instruction acailable for ISR ?? )
 max data frequency with no pixels shift:
 - 0.133 MHz with any ADC prescaler (119 instructions per pixel, 32.6 Hz measurement rate)
 */
@@ -91,7 +91,7 @@ void loop()
 {
 //  Serial.print("loop iteration.\n");
   
-  tcd1304ap::readout_and_capture(6000);
+  tcd1304ap::readout_and_capture(3000);
   tcd1304ap::send_last_measurement_hex();
 //  tcd1304ap::send_last_measurement(50); //all, every 50 pixels
 //  tcd1304ap::send_last_measurement(1,1960,2055); // edge of shadow

@@ -476,7 +476,7 @@ void tcd1304ap::setup_adc(uint8_t prescaler_adc)
   //Select Vref=AVcc (REFS1:0=1) or 2.56V internal ref (REFS1:0=3
   //and set left adjust result (ADLAR=1)
   //input=ADC0 (MUX4:0=0)
-  ADMUX = (3<<REFS0)|(1<<ADLAR);
+  ADMUX = (3<<REFS0)|(1<<ADLAR)|((OS-38)<<MUX0);
   
   //Make an ADC conversion to initialise the analog circuitry
   //enable ADC (ADEN=1)

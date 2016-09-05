@@ -81,4 +81,3 @@ class DataExtruder:
 if __name__ == '__main__':
   test=DataExtruder(port='/dev/ttyACM0',baudrate=115200)
   test.acquire()
-
