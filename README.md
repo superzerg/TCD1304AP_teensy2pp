@@ -4,9 +4,9 @@ Control and read out directly the TCD1304AP CCD linear array (http://oceanoptics
 It should work (with probably a bit of configuration) with an arduino Mega2560, but other arduino boards have too little RAM to read all pixels (the TCD1304AP has 3648 pixels, so to read all pixels at least 4k of memory is needed).
 
 example of a reading illuminated by a LED:
-![reading_no_bit](reading_no_bit.png =400x)
+![reading_no_bit](reading_no_bit.png)
 example of a reading illuminated by a LED with the shadow of a 3.5mm bit:
-![reading_3.5mm_bit](reading_3.5mm_bit.png =400x)
+![reading_3.5mm_bit](reading_3.5mm_bit.png)
 
 1) Installation
 ==============
@@ -18,7 +18,7 @@ example of a reading illuminated by a LED with the shadow of a 3.5mm bit:
 2) Wiring
 ==============
 
-Teensy2++       TCD1304A          Other
+| Teensy2++  |  | TCD1304A |  | Other
 
 OC2A/PB4 pin ---> PhiM
 
