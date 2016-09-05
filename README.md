@@ -15,15 +15,15 @@ It should work (with probably a bit of configuration) with an arduino Mega2560, 
 
 Teensy2++_______TCD1304A_____Other
 
-OC2A/PB4 pin--->PhiM
+OC2A/PB4 pin ---> PhiM
 
-OC3A/PC6 pin--->ICG
+OC3A/PC6 pin ---> ICG
 
-OC1A/PB5 pin--->SH
+OC1A/PB5 pin ---> SH
 
-ADC0/PF0 pin<---OS
+ADC0/PF0 pin <--- OS
 
-PC0 pin---------------------->LED (in series with an apropriate resistor)
+PC0 pin ----------------------> LED (in series with an apropriate resistor)
 
 3) Description/ Usage
 ==============
