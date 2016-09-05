@@ -33,6 +33,7 @@ There are few parameters you may want to set in the TCD1304ap.ino file (the valu
 - The pixel rate (in MHz), as 1st argument of the tcd1304ap::init() function in setup()
 - The ADC prescaler value (any power of 2 between 2 and 128), as 2nd argument of the tcd1304ap::init() function in setup()
 - The duration the LED is switched on (in us), as the only argument of tcd1304ap::readout_and_capture() in loop()
+
 Before you change these values, you should know:
 - The minimum pixel rate in the TCD1304AP specification is 0.2MHz. However, I was not able to run at this frequency, as it let too little time to make the ADC conversion and sore the reading in memory.
 - The mimimum pixel rate that my TCD1304AP supports is 0.067Mhz.
