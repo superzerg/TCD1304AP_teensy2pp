@@ -28,7 +28,7 @@ PC0 pin ----------------------------------> LED (in series with an apropriate re
 3) Description/ Usage
 ==============
 
-This program has been written to use the TCD1304AP as a filament width sensor (a bit like http://www.thingiverse.com/thing:454584). However as the TCD1304AP sensor is cheap and no additional componant are needed to interface it, it makes the TCD1304AP solution very competitive.
+This program has been written to use the TCD1304AP as a filament width sensor (a bit like http://www.thingiverse.com/thing:454584). However as the TCD1304AP sensor is cheap (3.5$ on ebay) and no additional componant are needed to interface it, it makes the TCD1304AP solution very competitive.
 
 The TCD1304AP sensor is driven without using the electric shutther function, so the illumination control is done by choosing the duration the LED is switched on durring the acquisition.
 
