@@ -82,5 +82,5 @@ Before you change these values, you should know:
 I plan to make:
 - a function to find automatically the best duration for the LED to be switch on (best contrast but no saturation).
 - a function to analyze the CCD sensor readings and calculate the width of the object between the LED and the CCD sensor.
-- a function which send the width of the object using one of the teensy DAC output (![MARLIN compatibility](https://github.com/MarlinFirmware/Marlin/pull/1037) )
+- a function which send the width of the object using one of the teensy DAC output ([MARLIN compatibility](https://github.com/MarlinFirmware/Marlin/pull/1037) )
 - a python function to calibrate this width measurement using f.e. bits with known diameters.
