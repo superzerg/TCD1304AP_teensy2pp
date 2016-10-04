@@ -3,6 +3,8 @@
 Control and read out directly the TCD1304AP CCD linear array (http://oceanoptics.com/wp-content/uploads/Toshiba-TCD1304AP-CCD-array.pdf) with a teensy2++ (https://www.pjrc.com/store/teensypp.html).
 It should work (with probably a bit of configuration) with an arduino Mega2560, but other arduino boards have too little RAM to read all pixels (the TCD1304AP has 3648 pixels, so to read all pixels at least 4k of memory is needed).
 
+TCD1304AP_teensy2pp is distrubuted under GPL v3 (https://www.gnu.org/licenses/gpl-3.0.txt).
+
 example of a reading illuminated by a LED:
 ![reading_no_bit](reading_no_bit.png)
 
